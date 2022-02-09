@@ -1,0 +1,542 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+  font-family: "Hind", sans-serif;
+  font-size: 16px;
+}
+
+.center-box {
+  margin: 0 auto;
+  width: 95%;
+  max-width: 1200px;
+  overflow: hidden;
+}
+
+#navigation {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.menu-icon {
+  width: 25px;
+  cursor: pointer;
+  display: none;
+  margin-top: 30px;
+}
+nav {
+  flex: 1;
+  text-align: right;
+}
+
+nav ul li {
+  list-style: none;
+  margin-right: 30px;
+  display: inline-block;
+}
+nav ul li a {
+  text-decoration: none;
+  color: rgb(44, 44, 44);
+  font-size: 16px;
+}
+nav ul li::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: black;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+nav ul li:hover::after {
+  width: 100%;
+}
+nav ul li a:hover {
+  font-weight: bold;
+}
+
+header {
+  padding: 15px 0;
+}
+#logo {
+  float: left;
+  width: 86px;
+  height: 96px;
+  background: url(../img/logo.jpg) top left no-repeat;
+  background-size: 100% auto;
+  display: block;
+}
+.welcome p {
+  margin: 0 0 15px 0;
+}
+/*#navigation {
+  float: right;
+}
+nav ul {
+  float: right;
+}
+nav ul li {
+  float: left;
+  text-align: left;
+  list-style: none;
+}
+nav ul li a {
+  text-decoration: none;
+  color: rgb(44, 44, 44);
+  padding: 1.2rem 1rem;
+  display: inline-block;
+  font-size: 16px;
+}
+nav ul li:last-of-type a {
+  padding-right: 0;
+}
+nav ul li a:hover {
+  font-weight: bold;
+}
+
+#intro {
+  width: 50%;
+  margin: 148px 0;
+}
+#intro p {
+  margin: 0 0 15px 0;
+}
+.intro img {
+  float: right;
+  margin: 0 0 2rem 2rem;
+} */
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 100px 0;
+}
+.col-1 {
+  flex-basis: 40%;
+  position: relative;
+}
+.col-2 {
+  flex-basis: 60%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+.story .col-1 {
+  flex-basis: 40%;
+  position: relative;
+}
+.story .col-2 {
+  flex-basis: 40%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+.story p {
+  line-height: 1.7;
+  text-align: left;
+}
+.story {
+  background-color: #f4f4f2;
+}
+.col-2 .introimg {
+  width: 90%;
+  z-index: 1;
+}
+.color-box {
+  position: absolute;
+  right: 0;
+  background: rgb(231, 231, 231);
+  width: 50%;
+  height: 80%;
+
+}
+.about .color-box {
+  position: absolute;
+  left: 0;
+  background: rgb(231, 231, 231);
+  width: 50%;
+  height: 50%;
+  transform: translate(0px);
+  z-index: -1;
+}
+.draw {
+  position: absolute;
+  left: 0;
+  background: rgb(231, 231, 231);
+  width: 50%;
+  height: 50%;
+  transform: translate(0px);
+  z-index: -1;
+}
+.button,
+.btn {
+  font-size: 16px;
+  font-weight: bold;
+  background: black;
+  color: white;
+  border-radius: 3px;
+  display: inline-block;
+
+  transition: all 0.3s ease-in-out;
+
+  padding: 10px 20px;
+  text-decoration: none;
+}
+.button:hover,
+.btn:hover {
+  background-color: rgb(54, 54, 54);
+  padding: 10px 25px;
+}
+.social-links img {
+  height: 20px;
+  margin: 30px 10px 0 0;
+  cursor: pointer;
+}
+.social-links {
+  text-align: left;
+}
+#bg {
+  background-image: url(../img/pari.jpg);
+  background-size: cover;
+  background-position: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  height: 500px;
+  
+}
+#bg2 {
+  background-image: url(../img/pizzza.jpg);
+  background-size: cover;
+  background-position: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  height: 500px;
+ 
+}
+#bg3 {
+  background-image: url(../img/csomag.jpg);
+  background-size: cover;
+  background-position: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  height: 500px;
+
+}
+#bg4 {
+  background-image: url(../img/wine.jpg);
+  background-size: cover;
+  background-position: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  height: 500px;
+  
+}
+
+table {
+  border-collapse: collapse; /*a táblázat borderei összeérjenek-e vagy legyen közöttük tévolság? border-collapse: separate;*/
+  border-spacing: 0;
+  width: 60%;
+  margin: 0 auto;
+}
+table td {
+  padding: 10px 15px;
+  text-align: left;
+  border-bottom: 1px solid rgb(216, 216, 216);
+  transition: all 0.5s; /*ALL: minden olyan elemre vonatkozzon, ahol változást észlel, tehát csak a hoveren van.
+  ha a td-re rakjuk, akkor mind a két irányba működni fog az animáció, amikor ráhuzzuk az egeret és amikor lehúzzuk*/
+}
+table th {
+  padding: 10px 15px;
+  color: black;
+  text-align: left;
+  font-weight: bolder;
+  border-bottom: 1px solid rgb(216, 216, 216);
+}
+
+table tr td:last-child {
+  /*a tr-en belül az utolsó td-t fogjuk kiszelektálni, AKCIÓS ÁR, esetünkben*/
+  text-align: right;
+  font-weight: 700;
+  white-space: nowrap; /*nem fogja megtörni a sort, amikor húzzuk össze a képernyőt  */
+}
+table tr td:nth-child(4) {
+  /*negyedik oszlop, EREDETI ÁR. Szeretnénk ha ez az ár áthúzva jelenjen meg*/
+  text-align: right;
+  white-space: nowrap;
+  text-decoration: line-through;
+}
+table tr:not(:first-child):hover td {
+  /*ha majd az egeret ráhúzzuk a sorra megváltozzon a szÍne*/
+  /*az első soron kÍvül mindent kiszelektáltunk*/
+  background: rgb(206, 206, 206);
+}
+#menu .row {
+  display: block;
+  margin-bottom: 50px;
+}
+
+#menu h1,
+#menu p {
+  text-align: center;
+}
+#menu p {
+  padding-bottom: 25px;
+}
+#menu,
+.btn {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.testimonials {
+  text-align: center;
+  float: left;
+  position: relative;
+  padding: 100px 0 50px 0;
+  background: #fcfcfd;
+  z-index: 1;
+  width: 100%;
+}
+.section-title {
+  float: left;
+  position: relative;
+
+  width: 100%;
+}
+.section-title p {
+  font-size: 16px;
+  max-width: 550px;
+  line-height: 1.7;
+  margin: 0 auto;
+}
+.section-title h2 {
+  text-align: center;
+  width: 100%;
+  float: left;
+  position: relative;
+}
+/*
+.section-separator {
+  margin: 20px 0;
+  width: 100%;
+  float: left;
+  position: relative;
+}
+.section-separator::before{
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 3px;
+  width: 50px;
+  border-radius: 3px;
+  z-index: 2;
+  background-color: ;
+} */
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.listing-carousel-button {
+  position: absolute;
+  top: 50%;
+  width: 60px;
+  height: 50px;
+  line-height: 50px;
+
+  margin-top: 30px;
+  z-index: 100;
+  cursor: pointer;
+  background: black;
+  box-shadow: 0 9px 26px rgba(58, 87, 135, 0.45);
+  transition: all 200ms linear;
+  outline: none;
+  color: white;
+}
+.listing-carousel-button.listing-carousel-button-next {
+  right: 0;
+  padding-right: 20px;
+  border-radius: 60px 0 0 60px;
+}
+.listing-carousel-button.listing-carousel-button-prev {
+  left: 0;
+  padding-left: 20px;
+  border-radius: 0 60px 60px 0;
+}
+.listing-carousel-button.listing-carousel-button-next:hover {
+  width: 80px;
+
+  background-color: rgb(54, 54, 54);
+}
+.listing-carousel-button.listing-carousel-button-prev:hover {
+  width: 80px;
+
+  background-color: rgb(54, 54, 54);
+}
+.testi-item {
+  transition: all 0.3s ease-in-out;
+  transform: scale(0.9);
+  opacity: 0.9;
+}
+.testimonials-text {
+  padding: 75px 50px 75px;
+  overflow: hidden;
+  background: #f5f6fa;
+  border: 1px solid #f1f1f1;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.testimonials-text-after {
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  position: absolute;
+  color: #ccc;
+  opacity: 0.3s;
+  transition: all 400ms linear;
+  bottom: 25px;
+  right: 30px;
+}
+.testimonials-text-before {
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  position: absolute;
+  color: #ccc;
+  opacity: 0.3s;
+  transition: all 400ms linear;
+  top: 25px;
+  left: 30px;
+}
+.testimonials-carousel .swiper-slide {
+  padding: 30px 0;
+}
+.swiper-slide-active .testimonials-text {
+  background: #fff;
+  box-shadow: 0 9px 26px rgba(58, 87, 135, 0.1);
+}
+.testimonials-text h4 {
+  font-size: 16px;
+  margin-top: 10px;
+}
+.testimonials-text p {
+  color: #878c9f;
+  font-size: 16px;
+}
+.text-link {
+  position: absolute;
+  bottom: 0;
+  padding: 15px 0;
+  border-radius: 10px 10px 0 0;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+  left: 50%;
+  width: 200px;
+  margin-left: -100px;
+}
+.swiper-slide-active .testi-item {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.gallery {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
+  column-gap: 10px;
+  row-gap: 10px;
+}
+.gallery img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media only screen and (max-width: 990px) {
+  .story .col-1,
+  .about .col-1{
+    flex-basis: 45%;
+   
+  }
+  .story .col-2 {
+    flex-basis: 45%;
+  }
+  #bg,
+  #bg2,
+  #bg3,
+  #bg4 {
+    height: 300px;
+  }
+
+@media only screen and (max-width: 768px) {
+ 
+  table {
+    width: 100%;
+  }
+  nav ul {
+    width: 100%;
+    position: absolute;
+    top: 90px;
+    right: 0;
+    z-index: 2;
+    background: black;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  nav ul li {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  nav ul li a {
+    color: white;
+  }
+  .menu-icon {
+    display: block;
+  }
+  #menuList {
+    overflow: hidden;
+    transition: 0.5s;
+  }
+  .row {
+    flex-direction: column-reverse;
+    margin: 70px 0;
+  }
+  .col-2 {
+    flex-basis: 100%;
+    margin-bottom: 50px;
+    width: 100%;
+    justify-content: center;
+  }
+  .col-1 {
+    flex-basis: 100%;
+    text-align: center;
+  }
+  .col-1 h1 {
+    font-size: 30px;
+  }
+  .col-1 p,
+  .button {
+    font-size: 14px;
+  }
+  .introimg {
+    width: 100%;
+  }
+  .color-box {
+    display: none;
+  }
+  .social-links {
+    text-align: center;
+  }
+}
