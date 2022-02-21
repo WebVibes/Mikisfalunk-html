@@ -2,7 +2,9 @@
   box-sizing: border-box;
   margin: 0;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: "Oswald", sans-serif;
   font-family: "Hind", sans-serif;
@@ -11,38 +13,45 @@ body {
 
 .center-box {
   margin: 0 auto;
-  width: 95%;
+  width: 90%;
   max-width: 1200px;
   overflow: hidden;
 }
 
-#navigation {
+.navbar-container {
+  width: 100%;
+  padding: 0 auto;
+  background-color: white;
+  height: auto;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+
+}
+header.sticky {
+  box-shadow: 0 9px 26px rgba(58, 87, 135, 0.45);
+  transition:  0.4s;
+}
+.navbar{
+  padding: 10px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+}
+.nav {
   display: flex;
   align-items: center;
-  margin-top: 10px;
 }
-.menu-icon {
-  width: 25px;
-  cursor: pointer;
-  display: none;
-  margin-top: 30px;
-}
-nav {
-  flex: 1;
-  text-align: right;
-}
-
-nav ul li {
-  list-style: none;
-  margin-right: 30px;
-  display: inline-block;
-}
-nav ul li a {
+.nav a {
   text-decoration: none;
   color: rgb(44, 44, 44);
   font-size: 16px;
+  margin-right: 30px;
 }
-nav ul li::after {
+
+
+.nav a::after {
   content: "";
   width: 0%;
   height: 2px;
@@ -51,63 +60,48 @@ nav ul li::after {
   margin: auto;
   transition: 0.5s;
 }
-nav ul li:hover::after {
+.nav a:hover::after {
   width: 100%;
 }
-nav ul li a:hover {
+.nav a:hover {
   font-weight: bold;
 }
 
-header {
-  padding: 15px 0;
+.menu-icon {
+  width: 25px;
+  cursor: pointer;
+  display: none;
+  margin-right: 30px;
 }
+
+header {
+  /* padding: 15px 0; */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  z-index: 3;
+  height: 96px;
+  align-items: center;
+}
+
 #logo {
   float: left;
-  width: 86px;
-  height: 96px;
+  width: 66px;
+  height: 76px;
   background: url(../img/logo.jpg) top left no-repeat;
   background-size: 100% auto;
   display: block;
+  margin-left: 15px;
+  
 }
 .welcome p {
   margin: 0 0 15px 0;
 }
-/*#navigation {
-  float: right;
-}
-nav ul {
-  float: right;
-}
-nav ul li {
-  float: left;
-  text-align: left;
-  list-style: none;
-}
-nav ul li a {
-  text-decoration: none;
-  color: rgb(44, 44, 44);
-  padding: 1.2rem 1rem;
-  display: inline-block;
-  font-size: 16px;
-}
-nav ul li:last-of-type a {
-  padding-right: 0;
-}
-nav ul li a:hover {
-  font-weight: bold;
+.welcome  {
+  margin-top: -30px;
 }
 
-#intro {
-  width: 50%;
-  margin: 148px 0;
-}
-#intro p {
-  margin: 0 0 15px 0;
-}
-.intro img {
-  float: right;
-  margin: 0 0 2rem 2rem;
-} */
 .row {
   display: flex;
   justify-content: space-between;
@@ -125,22 +119,22 @@ nav ul li a:hover {
   align-items: center;
   justify-content: right;
 }
-.story .col-1 {
+#story .col-1 {
   flex-basis: 40%;
   position: relative;
 }
-.story .col-2 {
+#story .col-2 {
   flex-basis: 40%;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: right;
 }
-.story p {
+#story p {
   line-height: 1.7;
   text-align: left;
 }
-.story {
+#story {
   background-color: #f4f4f2;
 }
 .col-2 .introimg {
@@ -152,15 +146,19 @@ nav ul li a:hover {
   right: 0;
   background: rgb(231, 231, 231);
   width: 50%;
-  height: 80%;
+  height: 50vw;
+  
+  max-height: 55%;
 
 }
-.about .color-box {
+.about .color-box{
   position: absolute;
   left: 0;
   background: rgb(231, 231, 231);
   width: 50%;
-  height: 50%;
+  max-height: 450px;
+  height: 40%;
+  min-height: 300px;
   transform: translate(0px);
   z-index: -1;
 }
@@ -174,7 +172,9 @@ nav ul li a:hover {
   z-index: -1;
 }
 .button,
-.btn {
+.btn,
+.btn-gallery
+{
   font-size: 16px;
   font-weight: bold;
   background: black;
@@ -187,8 +187,23 @@ nav ul li a:hover {
   padding: 10px 20px;
   text-decoration: none;
 }
+.tel {
+  display: inline-block;
+  background: url(../img/tel.svg) center left no-repeat;
+  background-size: auto 60%;
+  padding-left: 1rem;
+  font-weight: 600;
+  color: inherit;
+}
+.tel a {
+  color: white;
+  text-decoration: none;
+  padding-left: 5px ;
+}
+
 .button:hover,
-.btn:hover {
+.btn:hover,
+.btn-gallery:hover {
   background-color: rgb(54, 54, 54);
   padding: 10px 25px;
 }
@@ -200,43 +215,52 @@ nav ul li a:hover {
 .social-links {
   text-align: left;
 }
+#bg, #bg2,#bg3,#bg4,#bg5{
+background-size: cover;
+background-position: center;
+padding-top: 50px;
+padding-bottom: 50px;
+height:600px;
+}
 #bg {
-  background-image: url(../img/pari.jpg);
-  background-size: cover;
-  background-position: center;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  height: 500px;
-  
+  background-image: url(../img/bgpizza.jpg);
 }
 #bg2 {
-  background-image: url(../img/pizzza.jpg);
-  background-size: cover;
-  background-position: center;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  height: 500px;
- 
+  background-image: url(../img/bgparadicsom.jpg);
 }
 #bg3 {
-  background-image: url(../img/csomag.jpg);
-  background-size: cover;
-  background-position: center;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  height: 500px;
-
+  background-image: url(../img/bgtiramisu.jpg);
 }
 #bg4 {
-  background-image: url(../img/wine.jpg);
-  background-size: cover;
-  background-position: center;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  height: 500px;
-  
+  background-image: url(../img/bgpizza3.jpg);
+}
+#bg5 {
+  background-image: url(../img/bgpizza2.jpg);
 }
 
+
+#pizzamenu table{
+  width: 90%;
+  margin: 0;
+}
+#pizzamenu .col-1 {
+  display: flex;
+  flex-basis: 50%;
+}
+#pizzamenu .col-2 {
+
+  flex-basis: 50%;
+}
+#pizzamenu .row {
+  margin: 50px 0;
+  justify-content: left;
+}
+#pizzamenu h1{
+  margin-top: 50px ;
+}
+#pizzamenu td{
+  padding-left: 0 ;
+}
 table {
   border-collapse: collapse; /*a táblázat borderei összeérjenek-e vagy legyen közöttük tévolság? border-collapse: separate;*/
   border-spacing: 0;
@@ -250,6 +274,35 @@ table td {
   transition: all 0.5s; /*ALL: minden olyan elemre vonatkozzon, ahol változást észlel, tehát csak a hoveren van.
   ha a td-re rakjuk, akkor mind a két irányba működni fog az animáció, amikor ráhuzzuk az egeret és amikor lehúzzuk*/
 }
+#pizzamenu img {
+  width: 20px;
+}
+#pizzamenu table td{
+border: none;
+border-bottom: 1px solid rgb(216, 216, 216);
+}
+.menutable span{
+font-weight: bold;
+margin-bottom: 10px;
+font-size: x-large;
+color: black;
+}
+.extra .row{
+  margin-top: 0;
+  justify-content: center;
+}
+.menutable td{
+font-size: 14px;
+
+}
+#pizzamenu h4 {
+  color: black;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+.menutable td:first-child {
+  text-align: left;
+}
 table th {
   padding: 10px 15px;
   color: black;
@@ -257,7 +310,9 @@ table th {
   font-weight: bolder;
   border-bottom: 1px solid rgb(216, 216, 216);
 }
-
+table td {
+  color: gray;
+}
 table tr td:last-child {
   /*a tr-en belül az utolsó td-t fogjuk kiszelektálni, AKCIÓS ÁR, esetünkben*/
   text-align: right;
@@ -279,13 +334,26 @@ table tr:not(:first-child):hover td {
   display: block;
   margin-bottom: 50px;
 }
-
+#menu {
+  background: url(../img/bg.svg) no-repeat;
+ 
+}
+.menucontent {
+  display: flex;
+  gap: 5px;
+}
 #menu h1,
 #menu p {
   text-align: center;
 }
-#menu p {
+#menu p,
+#pizzamenu p{
   padding-bottom: 25px;
+}
+#pizzamenu p{
+ font-style: italic;
+ color: rgb(172, 170, 170);
+ margin-top: 10px;
 }
 #menu,
 .btn {
@@ -298,7 +366,7 @@ table tr:not(:first-child):hover td {
   float: left;
   position: relative;
   padding: 100px 0 50px 0;
-  background: #fcfcfd;
+
   z-index: 1;
   width: 100%;
 }
@@ -320,24 +388,7 @@ table tr:not(:first-child):hover td {
   float: left;
   position: relative;
 }
-/*
-.section-separator {
-  margin: 20px 0;
-  width: 100%;
-  float: left;
-  position: relative;
-}
-.section-separator::before{
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 0;
-  height: 3px;
-  width: 50px;
-  border-radius: 3px;
-  z-index: 2;
-  background-color: ;
-} */
+
 
 .swiper-container {
   width: 100%;
@@ -446,42 +497,151 @@ table tr:not(:first-child):hover td {
   transform: scale(1);
 }
 
-.gallery {
-  position: absolute;
+.gallery-title {
+  text-align: center;
+  margin: 50px 0;
+}
+.gallery-title p{
+  margin-bottom: 30px;
+}
+.container {
+  display: flex;
+  max-width: 1400px;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 50px auto;
+}
+.gallery-item {
+  padding: 5px;
+  width:400px;
+}
+.social img {
+  height: 20px;
+  margin: 10px;
+  cursor: pointer;
+}
+.footer {
+  background: black;
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+.copyright  {
+ font-size: 14px;
+ font-weight: lighter;
+}
+.topic {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+.topic p{
+ color: black;
+ font-weight: 600;
+}
+.adress p{
+  text-align: center;
+}
+.adress {
+margin: 10px 0;
+}
+.contact-box {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
-  width: 100vw;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
-  column-gap: 10px;
-  row-gap: 10px;
+  padding: 70px 30px;
 }
-.gallery img {
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
-  object-position: center;
+#contact img{
+  width: 20px;
 }
-
+#contact a{
+  text-decoration: none;
+}
+#contact {
+  background: #f4f4f2;
+}
+.map {
+  filter: grayscale(100%);
+}
+#pizzamenu .row{
+ align-items: flex-start;
+}
+.gallery-title h2,
+.gallery-title p {
+margin-left: 12%;
+margin-right: 12%;
+  text-align: center;
+}
 @media only screen and (max-width: 990px) {
-  .story .col-1,
+  .gotop{
+      visibility: hidden;
+  }
+  .color-box{
+    width: 40%;
+  }
+  .about .color-box {
+    width: 70%;
+  }
+  #story .col-1,
   .about .col-1{
     flex-basis: 45%;
    
   }
-  .story .col-2 {
+  #story .col-2 {
     flex-basis: 45%;
   }
   #bg,
   #bg2,
   #bg3,
-  #bg4 {
+  #bg4,
+  #bg5{
     height: 300px;
   }
 
 @media only screen and (max-width: 768px) {
- 
+  .testimonials {
+    padding: 70px 0 30px 0;
+  }
+  .gallery-title {
+    margin-bottom: 30px;
+    margin-top: 60px;
+  }
+  #menu {
+    background: none;
+  }
+  .map iframe{
+    height: 300px;
+  }
+  #pizzamenu .col-1{
+    width: 100vw;
+  }
+  #pizzamenu .col-2{
+  justify-content: left;
+  margin-bottom: 0;
+  }
+  #pizzamenu p {
+    padding-bottom: 0;
+  }
+  #pizzamenu h1{
+    margin-top: 20px;
+  }
+  .welcome .col-1 h1{
+   font-size: 40px;
+  }
+ #story .row,
+ #pizzamenu .row{
+  flex-direction: column
+ }
+ #story .col-2 {
+  margin-bottom: 0;
+ }
+ #story h1,
+ .about h1,
+ .about p {
+   text-align: left;
+ }
   table {
     width: 100%;
   }
@@ -505,6 +665,9 @@ table tr:not(:first-child):hover td {
   .menu-icon {
     display: block;
   }
+  .nav a {
+    display: none;
+  }
   #menuList {
     overflow: hidden;
     transition: 0.5s;
@@ -516,7 +679,7 @@ table tr:not(:first-child):hover td {
   .col-2 {
     flex-basis: 100%;
     margin-bottom: 50px;
-    width: 100%;
+    width: 100vw;
     justify-content: center;
   }
   .col-1 {
@@ -536,7 +699,17 @@ table tr:not(:first-child):hover td {
   .color-box {
     display: none;
   }
+  
   .social-links {
     text-align: center;
   }
+
+}
+
+
+@media only screen and (max-width: 400px) {
+.gallery-item {
+  width:300px;
+}
+
 }

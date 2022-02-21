@@ -14,22 +14,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <section id="top">
-      <header>
-        <div class="center-box">
-          <div id="logo"></div>
-          <div id="navigation">
-            <nav>
-              <ul id="menuList">
-                <li><a href="Étlap">Étlap</a></li>
-                <li><a href="Rólunk">Rólunk</a></li>
-                <li><a href="Kapcsolat">Kapcsolat</a></li>
-              </ul>
-            </nav>
+    <header>
+      <div class="navbar-container">
+        <div class="navbar">
+          <a href="index.html"> <div id="logo"></div></a>
+
+          <div class="nav">
+            <a href="menu.html">Étlap</a>
+            <a href="#story">Rólunk</a>
+            <a href="#contact">Kapcsolat</a>
+
             <img src="img/menu.svg" class="menu-icon" onclick="togglemenu()" />
           </div>
         </div>
-      </header>
+      </div>
+    </header>
+    <section id="top">
       <div class="welcome">
         <div class="center-box">
           <div class="row">
@@ -39,7 +39,7 @@
                 Meglepetést akarunk okozni minden generációnak ízeinkkel, jó minőségű alapanyagainkkal és megmutatni ,hogy kreativitásunk határtalan.
                 Mindeközben stílusunk egyszerű, letisztult és közérthető.
               </p>
-              <a class="button" href="">Étlap megtekintése</a>
+              <a class="button" href="menu.html">Étlap megtekintése</a>
               <div class="social-links">
                 <img src="img/facebook.svg" />
                 <img src="img/instagram.svg" />
@@ -59,24 +59,6 @@
         <div class="row bg"></div>
       </div>
     </section>
-    <!--
-    <div class="about">
-      <div class="center-box">
-        <div class="row">
-          <div class="col-1">
-            <h1>Felejthetetlen gasztronómiai élményt nyújtunk</h1>
-            <p>
-              A jókedv, a szeretet mellett, nagyon fontos hozzávalói a recetúráinknak a minőségi, de legfőképp friss alapanyagok. Ezeket a "fűszereket"
-              használva készítünk nap, mint nap finomságokat vendégeinknek.
-            </p>
-          </div>
-          <div class="col-2">
-            <img class="introimg" src="img/rolunk.jpg" alt="Pizza készítés" />
-          </div>
-          <div class="color-box"></div>
-        </div>
-      </div>
-    </div>-->
 
     <div class="about">
       <div class="center-box">
@@ -102,7 +84,7 @@
       </div>
     </section>
 
-    <div class="story">
+    <section id="story">
       <div class="center-box">
         <div class="row">
           <div class="col-1">
@@ -124,7 +106,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
     <section id="bg3">
       <div class="center-box">
         <div class="row bg"></div>
@@ -172,7 +154,7 @@
             </tr>
           </table>
         </div>
-        <a class="btn" href="">Pizza étlap megtekintése</a>
+        <a class="btn" href="menu.html">Pizza étlap megtekintése</a>
       </div>
     </section>
     <section id="bg4">
@@ -321,27 +303,91 @@
       </div>
     </section>
 
-    <!-- <div class="center-box">
-      <div class="gallery">
-        <img src="img/sajt.jpg" />
-        <img src="img/sajt.jpg" />
-        <img src="img/sajt.jpg" />
-        <img src="img/sajt.jpg" />
-        <img src="img/sajt.jpg" />
-        <img src="img/sajt.jpg" />
-      </div>
-    </div> -->
+    <section class="container">
+      <img class="gallery-item" src="img/gallery_item1.jpg" />
+      <img class="gallery-item" src="img/gallery_item2.jpg" />
+      <img class="gallery-item" src="img/gallery_item3.jpg" />
+      <img class="gallery-item" src="img/gallery_item4.jpg" />
 
+      <img class="gallery-item" src="img/gallery_item5.jpg" />
+      <img class="gallery-item" src="img/gallery_item6.jpg" />
+      <div class="gallery-title">
+        <h2>Mi már várjuk, hogy találkozzunk!</h2>
+        <p>
+          Amíg nem látogatsz el hozzánk, használhatod házhozszállítási lehetőségünket vagy elvitelre is rendelhetsz. Vendégeink számára díjmentes parkolást
+          biztosítunk.
+        </p>
+
+        <div class="btn-gallery">
+          <div class="tel">
+            <a href="tel:06 20 394 8609">06 20 394 8609</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="bg5">
+      <div class="center-box">
+        <div id="row-bg"></div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="contact-box">
+        <h1>Elérhetőségeink</h1>
+        <div class="adress">
+          <div class="topic">
+            <img src="img/cim.svg" />
+            <p>Cím</p>
+          </div>
+          <p>2755 Kocsér Szabadság utca 20.</p>
+        </div>
+        <div class="adress">
+          <div class="topic">
+            <img src="img/telefonszam.svg" />
+            <p>Telefonszám</p>
+          </div>
+          <a href="tel:06 20 394 8609"><p>06 20 394 8609</p></a>
+        </div>
+        <div class="adress">
+          <div class="topic">
+            <img src="img/ora.svg" />
+            <p>Nyitvatartás</p>
+          </div>
+          <p>szerda-csütörtök<br />16:00 - 21:30</p>
+          <p>szerda-csütörtök<br />16:00 - 21:30</p>
+        </div>
+      </div>
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2720.9590114262933!2d19.921137875712635!3d47.001777772696684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x474160fec3f77e73%3A0x2540177b0c5abc20!2zTWkgS2lzIEZhbHVuayDDiWxtw6lueU3FsWhlbHk!5e0!3m2!1shu!2shu!4v1645000353008!5m2!1shu!2shu"
+          width="100%"
+          height="500"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+    </section>
+
+    <section class="footer">
+      <div class="social">
+        <img src="img/facebook_footer.svg" />
+        <img src="img/instagram_footer.svg" />
+      </div>
+      <p class="copyright">© Copyright Galgócziék sütödéje Minden jog fenntartva</p>
+    </section>
     <script>
-      var menuList = document.getElementById("menuList");
-      menuList.style.maxHeight = "0px";
       function togglemenu() {
-        if (menuList.style.maxHeight == "0px") {
-          menuList.style.maxHeight = "130px";
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
         } else {
-          menuList.style.maxHeight = "0px";
+          x.style.display = "block";
         }
       }
+      window.addEventListener("scroll", function () {
+        var header = document.querySelector("header");
+        header.classList.toggle("sticky", window.scrollY > 0);
+      });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.3/swiper-bundle.min.js"></script>

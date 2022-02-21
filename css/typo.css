@@ -10,11 +10,8 @@ h2 {
   font-size: 50px;
   margin: 0 0 15px 0;
 }
-h3 {
-  font-size: 35px;
-}
-h4 {
-  font-size: 26px;
+p {
+  color: gray;
 }
 @media only screen and (max-width: 1090px) {
   h1,
